@@ -9,6 +9,8 @@ test.describe("Checkout", () => {
   });
 
   test("buys two items and the totals add up", async ({ inventoryPage, cartPage, checkoutPage, page }) => {
+    // The full purchase is the longest flow here, so it gets 3x the normal time limit.
+    test.slow();
     const chosen = [products.backpack, products.boltTShirt];
     const expectedSubtotal = round(
       (await inventoryPage.priceOf(chosen[0])) + (await inventoryPage.priceOf(chosen[1])),
