@@ -39,7 +39,7 @@ jobs:
         with:
           name: blob-report-${{ matrix.browser }}
           path: blob-report
-          retention-days: 7
+          retention-days: 2
 
   report:
     name: HTML report
@@ -64,7 +64,7 @@ jobs:
         with:
           name: html-report
           path: playwright-report
-          retention-days: 14
+          retention-days: 2
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:

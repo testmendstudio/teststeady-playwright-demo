@@ -33,7 +33,8 @@ Choices worth noting:
 - **Checks that mean something.** Totals are worked out from the product prices, not hard-coded.
 - **Low retries.** CI retries a failed test once at most, and the report flags any test that needed a
   retry, so flaky tests get seen and fixed instead of hidden.
-- **Evidence on failure.** Trace, screenshot and video are kept for every failed test.
+- **Evidence for every test.** In CI each test keeps a screenshot, video and full trace, so the
+  report shows every step, pass or fail. Local runs keep them only for failures.
 
 ## Run it yourself
 

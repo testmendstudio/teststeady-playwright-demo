@@ -19,11 +19,11 @@ export default defineConfig({
     baseURL: "https://www.saucedemo.com",
     // The demo store marks its elements with data-test="...".
     testIdAttribute: "data-test",
-    trace: "retain-on-failure",
-    screenshot: "only-on-failure",
-    // Video is recorded for every test and thrown away if it passes, which is heavy on a laptop.
-    // CI keeps it; locally the trace already shows each step.
-    video: isCI ? "retain-on-failure" : "off",
+    // CI keeps a trace, screenshot and video for every test so the published report shows each
+    // step, even on a pass. Locally only failures keep them, to stay light on a laptop.
+    trace: isCI ? "on" : "retain-on-failure",
+    screenshot: isCI ? "on" : "only-on-failure",
+    video: isCI ? "on" : "off",
   },
   projects: [
     // Logs in once and saves the session so other tests start already signed in.
