@@ -30,7 +30,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx tsc --noEmit
-      - run: npx playwright install --with-deps ${{ matrix.browser }}
+      # The sign-in setup project runs in Chromium, so every job needs it too.
+      - run: npx playwright install --with-deps chromium ${{ matrix.browser }}
       - run: npx playwright test --project=${{ matrix.browser }}
       - name: Upload blob report
         if: ${{ !cancelled() }}
