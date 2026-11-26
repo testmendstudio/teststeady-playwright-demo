@@ -4,7 +4,7 @@ A small, real regression suite for a public demo store ([saucedemo.com](https://
 built the way we build suites for clients: page objects, one sign-in shared across tests,
 three browsers in CI, and an HTML report on every run.
 
-**Latest report:** _link added once GitHub Pages is on_
+**Latest report:** [testmendstudio.github.io/teststeady-playwright-demo](https://testmendstudio.github.io/teststeady-playwright-demo/)
 
 ## What it covers
 
